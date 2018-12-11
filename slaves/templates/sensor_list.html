@@ -5,7 +5,7 @@
 <style>
 </style>
 
-<div id="map">
+<div id="map" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom">
     <div class="leaflet-control-container">
         <div class="leaflet-top leaflet-left">
             <div class="leaflet-control-zoom leaflet-bar leaflet-control">
@@ -40,7 +40,7 @@
                 </form>                         
             </div>
         </div>
-    </div>
+    </div>    
 </div>
 
 <script>
@@ -53,21 +53,21 @@
     var map = L.map('map', {scrollWheelZoom:false}).setView(Masterlatlng,9);
 
     var map_osm = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="#">Powered by SiRCom SMART Alert (OSM)</a>.',
+        attribution: '&copy; <a href="#">Powered by Telecon Systems (OSM)</a>.',
         maxZoom: 18,
         minZoom: 5
     });
 
     //  add base map tiles from OpenStreetMap and attribution info to 'map' div
     var map_satellite = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-        attribution: '&copy; <a href="http://telecon-systems.com/">Powered by Telecon Systems</a>',
+        attribution: '&copy; <a href="http://telecon-systems.com/" target="_blank">Powered by Telecon Systems</a>',
         // maxZoom: 18,
         // minZoom: 5
 
     });
 
     var map_terrain = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.{ext}', {
-        attribution: '&copy; <a href="#">Powered by SiRCom SMART Alert (Fastly)</a>.',
+        attribution: '&copy; <a href="#">Powered by Telecon Systems (Fastly)</a>.',
         subdomains: 'abcd',
         ext: 'png',
         maxZoom: 14,
@@ -148,6 +148,30 @@ try {
             <i class="fa fa-registered" aria-hidden="true" data-toggle="modal" data-target="#exModal5"></i>
         </tbody>
     </table>
+</div>
+<!-- Starting popup -->
+<div class="leaflet-pane leaflet-popup-pane">
+  <div class="leaflet-popup  leaflet-zoom-animated" style="opacity: 1; transform: translate3d(462px, 350.5px, 0px); bottom: -7px; left: -125px;">
+    <div class="leaflet-popup-content-wrapper">
+      <div class="leaflet-popup-content" style="width: 321px;">
+        <div class="unit-info-box status-0 ">
+          <div class="edit-unit">Edit</div>
+          <div class="unitTypeSmall">
+            <span class="label">Siren</span>
+          </div>
+          <div class="unitType">
+            <span class="label">Badmare</span>
+          </div>
+          <div class="select-unit">Select</div>
+          <div class="move-unit">Move</div>
+        </div>
+      </div>
+    </div>
+    <div class="leaflet-popup-tip-container">
+      <div class="leaflet-popup-tip"></div>
+    </div>
+    <a class="leaflet-popup-close-button" href="#close">x</a>
+  </div>
 </div>
 <!-- Master Modal -->
 <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
